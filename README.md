@@ -11,7 +11,7 @@ Since pygame doesnot have any gui features and only draws shapes and handle even
 ### Documentation
 Common For all:
 1. first create the object.
-```
+```python
 btn1 =  Button(
             fill=Colors.red,
             x=0, y=0,
@@ -39,7 +39,7 @@ btnRow = Row(0,0,20, [
     ])
 ```
 2. use `.draw(surface)` method to draw which takes `pygame.Surface` as parameter.
-```
+```python
 ...
 while running:
   btn1.draw(window)
@@ -47,7 +47,7 @@ while running:
 ...
 ```
 3. use `.handleEvent(event)` which takes `pygame.event` to handle event.<br>
-```
+```python
 while running:
   ...
   for event in pygame.event.get():
