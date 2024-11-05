@@ -2,11 +2,11 @@ import pygame
 
 
 class Column:
-    def __init__(self, startX, startY, marginBottom, children:list):
+    def __init__(self, x, y, marginBottom, children:list):
         self.children = children
         self.marginBottom = marginBottom
-        self.x = startX
-        self.y = startY
+        self.x = x
+        self.y = y
         self.width = self.getMaxWidth()
         self.height = self.getHeight()
         self.type = "list"

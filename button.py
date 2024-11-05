@@ -13,7 +13,8 @@ class Button:
                 fill=Colors.blue,
                 text = "Click",
                 centered = False,
-                borderRadius = 10
+                borderRadius = 10,
+                fontSize = 24,
             ):
         self.width, self.height = width, height
         self.x, self.y = x, y
@@ -24,7 +25,7 @@ class Button:
         self.borderColor = borderColor
         self.fill = fill
         self.text = text
-        self.fontSize = 24
+        self.fontSize = fontSize
         self.borderRadius = borderRadius
         self.border = 2
         self.onclick = onClick

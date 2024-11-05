@@ -2,11 +2,11 @@ import pygame
 
 
 class Row:
-    def __init__(self, startX, startY, marginRight, children:list):
+    def __init__(self, x, y, marginRight, children:list):
         self.children = children
         self.marginRight = marginRight
-        self.x = startX
-        self.y = startY
+        self.x = x
+        self.y = y
         self.width = self.getWidth()
         self.height = self.getMaxHeight()
         self.type = "list"
