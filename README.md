@@ -72,7 +72,7 @@ rowBtns = Row(x=50, y=50, marginRight=15, children=[btn1, btn2, btn3])
 #### Column
 ![image](https://github.com/user-attachments/assets/a22d5765-c9d9-4bcf-a7ba-7128c42a9419)
 ```python
-colBtns = Column(x=50, y=50, marginRight=15, children=[btn1, btn2, btn3])
+colBtns = Column(x=50, y=50, marginBottom=15, children=[btn1, btn2, btn3])
 ```
 #### Row-Column nested
 ![image](https://github.com/user-attachments/assets/7bb312d7-501f-4800-bf05-3e50e6fbd501)
