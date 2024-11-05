@@ -45,6 +45,7 @@ custom = Button(
     y= 50,
     width= 300,
     height=100,
+    centered= True, #whether to use x,y as the center of the button or not   
     fill= (230, 57, 43), #red
     borderColor=(255, 235, 59), #yellow
     borderRadius= 50,
@@ -58,7 +59,6 @@ custom = Button(
 ```python
 btn = Button(
         x=0, y=0,
-        centered= True,   
         text= "Img Button",
         image="assets/btn1.png",
         onClick=func
