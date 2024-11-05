@@ -5,9 +5,12 @@ Since pygame doesnot have any gui features and only draws shapes and handle even
 Button, Row, Column
 
 ## Getting Started
-First create the ui object
+First create the ui object and function for click event(for buttons)
 ```python
-btn = Button(x=0, y=0, text="Hello", onClick=func)
+def clickEvent():
+    print("Button Event called!")
+
+btn = Button(x=0, y=0, text="Hello", onClick=clickEvent)
 btnRow = Row(x=0, y=90, marginRight=5, children=[btn1, btn2])
 ```
 use `.draw(surface)` method to draw which takes `pygame.Surface` as parameter.
