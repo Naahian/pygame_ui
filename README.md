@@ -4,7 +4,7 @@ Since pygame doesnot have any gui features and only draws shapes and handle even
 ### Features
 Button, Row, Column
 
-## Getting Started
+## Usage
 First create the ui object and function for click event(for buttons)
 ```python
 def clickEvent():
