@@ -2,7 +2,7 @@
 
 Since pygame doesnot have any gui features and only draws shapes and handle event loop I decided to make UI components for making menus similar to flutter widget. If you ever created flutter apps this should be easier.
 ### Features
-Button, Row, Column
+Button, Row, Column (Container, Slider, toggleSwitch coming soon...)
 
 ## Usage
 First create the ui object and function for click event(for buttons)
