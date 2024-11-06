@@ -76,10 +76,28 @@ colBtns = Column(x=50, y=50, marginBottom=15, children=[btn1, btn2, btn3])
 ```
 #### Row-Column nested
 ![image](https://github.com/user-attachments/assets/7bb312d7-501f-4800-bf05-3e50e6fbd501)
+(x,y of nested objects doesnot matter/ignored when drawn)
 ```python
 rowBtns1 = Row(x=50, y=50, marginRight=15, children=[button3, button4, button5])
 rowBtns2 = Row(x=50,y=50, marginRight=15, children=[button6, button7])
 colBtns = Column(x=50, y=50, marginBottom=15, children=[rowBtns1, rowBtns2])
-
+```
+or
+```
+colBtns = Column(
+    x=50,
+    y=50,
+    marginBottom=15,
+    children=[
+        Row(x=50, y=50, marginRight=15, children=[
+            Button(x= 0, y= 0, text= "Button 1", onClick= button1Event),
+            Button(x= 0, y= 0, text= "Button 2", onClick= button2Event),
+            Button(x= 0, y= 0, text= "Button 3", onClick= button3Event),
+        ]),
+        Row(x=0, y=0, marginRight=15, children=[
+            Button(x= 0, y= 0, text= "Button 4", onClick= button4Event),
+            Button(x= 0, y= 0, text= "Button 5", onClick= button5Event),
+        ]),
+    ])
 ```
 
