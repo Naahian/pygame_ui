@@ -83,7 +83,7 @@ rowBtns2 = Row(x=50,y=50, marginRight=15, children=[button6, button7])
 colBtns = Column(x=50, y=50, marginBottom=15, children=[rowBtns1, rowBtns2])
 ```
 or
-```
+```python
 colBtns = Column(
     x=50,
     y=50,
