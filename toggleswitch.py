@@ -5,32 +5,33 @@ class ToggleSwitch:
     def __init__(
             self,
             x, y,
-            size=100,
-            color=(123,125,250),
+            width=60,
+            color=(2, 136, 209), #blue
             onActive = lambda:None,
         ):
         self.x, self.y = x, y
-        self.size = size
+        self.width = width
+        self.height = width*.5
         self.color = color
-        self.value = False
+        self.isOn = False
         self.onActive = onActive
-        self.border = pygame.Rect(x,y, size, size*.46)
-        self.surface = pygame.surface.Surface((size, size))
+        self.border = pygame.Rect(x,y, width, self.height)
+        self.surface = pygame.surface.Surface((width, self.height))
         self.surface.set_colorkey((0,0,0))
 
          
     def draw(self, surface:pygame.Surface):
         self.border.x, self.border.y = self.x, self.y
-        pygame.draw.rect(self.surface, (60,60,60), (0,0,self.size, self.size*.46), 2, self.size)
+        pygame.draw.rect(self.surface, (60,60,60), (0,0,self.width, self.height), 2, self.width)
         
-        if(self.value):
-            circle_x = self.size - self.size*.23
-            pygame.draw.rect(self.surface, self.color, (0,0,self.size, self.size*.46), 0, self.size)
-            pygame.draw.circle(self.surface, (255,255,255), (circle_x, self.size*.23),self.size*.19)
+        if(self.isOn):
+            circle_x = self.width - self.width*.25
+            pygame.draw.rect(self.surface, self.color, (0,0,self.width, self.height), 0, self.width)
+            pygame.draw.circle(self.surface, (255,255,255), (circle_x, self.width*.25),self.width*.21)
         else:
-            circle_x = self.size*.23
-            pygame.draw.rect(self.surface, (150,150,150), (0,0,self.size, self.size*.46), 0, self.size)
-            pygame.draw.circle(self.surface, (255,255,255), (circle_x, self.size*.23),self.size*.19)
+            circle_x = self.width*.25
+            pygame.draw.rect(self.surface, (120,120,120), (0,0,self.width, self.height), 0, self.width)
+            pygame.draw.circle(self.surface, (255,255,255), (circle_x, self.width*.25),self.width*.21)
         
                 
         surface.blit(self.surface, (self.x, self.y))
@@ -41,8 +42,8 @@ class ToggleSwitch:
         
         if self.border.collidepoint(pos):
             if (event.type == pygame.MOUSEBUTTONDOWN):
-                self.value = not self.value
-                if(self.value): self.onActive()
+                self.isOn = not self.isOn
+                if(self.isOn): self.onActive()
                 
 
 
