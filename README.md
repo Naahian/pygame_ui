@@ -16,6 +16,7 @@ btnRow = Row(x=0, y=90, marginRight=5, children=[btn1, btn2])
 use `.draw(surface)` method to draw which takes `pygame.Surface` as parameter.
 ```python
 while running:
+  window.fill((255,255,255))
   btn.draw(window)
   btnRow.draw(window)
 ```
