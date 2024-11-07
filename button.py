@@ -6,12 +6,12 @@ class Colors:
 
 class Button:
     def __init__(self, x, y,
-                onClick=lambda:None,
+                text = "Click",
                 width=140, height=50,
+                onClick=lambda:None,
                 image:str = None,  
                 borderColor=Colors.white,
                 fill=Colors.blue,
-                text = "Click",
                 centered = False,
                 borderRadius = 10,
                 fontSize = 24,
