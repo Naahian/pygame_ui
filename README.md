@@ -29,8 +29,8 @@ while running:
 ...
 ```
 ## Documentaion
+![ss](https://github.com/user-attachments/assets/f2fd5409-9257-4af6-91b8-06d40f2a493f)
 #### default Button
-![image](https://github.com/user-attachments/assets/8f4e48f0-1fc6-4154-a943-5b086c1444d8)
 ```python
 default = Button(
     x= 50,
@@ -55,7 +55,6 @@ custom = Button(
 )
 ```
 #### Imaged Button
-![image](https://github.com/user-attachments/assets/b0c27c73-5e0c-42f4-9a69-b63e7641d026)
 ```python
 btn = Button(
         x=0, y=0,
@@ -64,18 +63,16 @@ btn = Button(
         onClick=func
       )
 ```
+![qa](https://github.com/user-attachments/assets/7249c145-5401-41ba-a1f3-0184b841d667)
 #### Row
-![image](https://github.com/user-attachments/assets/4aa9bf9b-dafa-44a9-8086-7fe6ae4169da)
 ```python
 rowBtns = Row(x=50, y=50, marginRight=15, children=[btn1, btn2, btn3])
 ```
 #### Column
-![image](https://github.com/user-attachments/assets/a22d5765-c9d9-4bcf-a7ba-7128c42a9419)
 ```python
 colBtns = Column(x=50, y=50, marginBottom=15, children=[btn1, btn2, btn3])
 ```
 #### Row-Column nested
-![image](https://github.com/user-attachments/assets/7bb312d7-501f-4800-bf05-3e50e6fbd501)
 (x,y of nested objects doesnot matter/ignored when drawn)
 ```python
 rowBtns1 = Row(x=50, y=50, marginRight=15, children=[button3, button4, button5])
