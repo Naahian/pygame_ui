@@ -2,9 +2,9 @@
 
 Since pygame doesnot have any gui features and only draws shapes and handle event loop I decided to make UI components for making menus similar to flutter widget. If you ever created flutter apps this should be easier.
 ### Features
-Button, Row, Column
+Button, Row, Column (Container, Slider, toggleSwitch coming soon...)
 
-## Getting Started
+## Usage
 First create the ui object and function for click event(for buttons)
 ```python
 def clickEvent():
@@ -45,6 +45,7 @@ custom = Button(
     y= 50,
     width= 300,
     height=100,
+    centered= True, #whether to use x,y as the center of the button or not   
     fill= (230, 57, 43), #red
     borderColor=(255, 235, 59), #yellow
     borderRadius= 50,
@@ -58,7 +59,6 @@ custom = Button(
 ```python
 btn = Button(
         x=0, y=0,
-        centered= True,   
         text= "Img Button",
         image="assets/btn1.png",
         onClick=func
@@ -72,14 +72,32 @@ rowBtns = Row(x=50, y=50, marginRight=15, children=[btn1, btn2, btn3])
 #### Column
 ![image](https://github.com/user-attachments/assets/a22d5765-c9d9-4bcf-a7ba-7128c42a9419)
 ```python
-colBtns = Column(x=50, y=50, marginRight=15, children=[btn1, btn2, btn3])
+colBtns = Column(x=50, y=50, marginBottom=15, children=[btn1, btn2, btn3])
 ```
 #### Row-Column nested
 ![image](https://github.com/user-attachments/assets/7bb312d7-501f-4800-bf05-3e50e6fbd501)
+(x,y of nested objects doesnot matter/ignored when drawn)
 ```python
 rowBtns1 = Row(x=50, y=50, marginRight=15, children=[button3, button4, button5])
 rowBtns2 = Row(x=50,y=50, marginRight=15, children=[button6, button7])
 colBtns = Column(x=50, y=50, marginBottom=15, children=[rowBtns1, rowBtns2])
-
+```
+or
+```python
+colBtns = Column(
+    x=50,
+    y=50,
+    marginBottom=15,
+    children=[
+        Row(x=50, y=50, marginRight=15, children=[
+            Button(x= 0, y= 0, text= "Button 1", onClick= button1Event),
+            Button(x= 0, y= 0, text= "Button 2", onClick= button2Event),
+            Button(x= 0, y= 0, text= "Button 3", onClick= button3Event),
+        ]),
+        Row(x=0, y=0, marginRight=15, children=[
+            Button(x= 0, y= 0, text= "Button 4", onClick= button4Event),
+            Button(x= 0, y= 0, text= "Button 5", onClick= button5Event),
+        ]),
+    ])
 ```
 
