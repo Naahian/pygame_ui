@@ -13,18 +13,17 @@ class ToggleSwitch:
         self.width = width
         self.height = width*.5
         self.color = color
-        self.isOn = False
+        self.value = False
         self.onActive = onActive
         self.border = pygame.Rect(x,y, width, self.height)
         self.surface = pygame.surface.Surface((width, self.height))
         self.surface.set_colorkey((0,0,0))
-
-         
+        
     def draw(self, surface:pygame.Surface):
         self.border.x, self.border.y = self.x, self.y
         pygame.draw.rect(self.surface, (60,60,60), (0,0,self.width, self.height), 2, self.width)
         
-        if(self.isOn):
+        if(self.value):
             circle_x = self.width - self.width*.25
             pygame.draw.rect(self.surface, self.color, (0,0,self.width, self.height), 0, self.width)
             pygame.draw.circle(self.surface, (255,255,255), (circle_x, self.width*.25),self.width*.21)
@@ -42,8 +41,8 @@ class ToggleSwitch:
         
         if self.border.collidepoint(pos):
             if (event.type == pygame.MOUSEBUTTONDOWN):
-                self.isOn = not self.isOn
-                if(self.isOn): self.onActive()
+                self.value = not self.value
+                if(self.value): self.onActive()
                 
 
 

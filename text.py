@@ -7,7 +7,8 @@ class Text:
         font = pygame.font.SysFont(family, size)
         self.img = font.render(text, True, color)
         self.width, self.height = self.img.get_width(), self.img.get_height()
-    
+        print(self.width, self.height)
+        
     def draw(self, surface:pygame.Surface):
         surface.blit(self.img, (self.x,self.y))
     

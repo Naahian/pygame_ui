@@ -14,9 +14,9 @@ class Column:
     def draw(self, surface:pygame.Surface):
         y_pos = self.y
         for i in range(len(self.children)):
-            y_pos += self.children[i-1].height + self.marginBottom 
             self.children[i].y = y_pos
             self.children[i].x = self.x
+            y_pos += self.children[i-1].height + self.marginBottom 
             self.children[i].draw(surface)
     
     def handleEvent(self, event:pygame.event):
