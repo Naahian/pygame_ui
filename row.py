@@ -14,11 +14,11 @@ class Row:
     def draw(self, surface:pygame.Surface):
         x_pos = self.x
         for i in range(len(self.children)):
-            x_pos = (self.children[i-1].width)*i + self.marginRight*i + self.x
             self.children[i].y = self.y
             self.children[i].x = x_pos
             self.children[i].draw(surface)
-
+            x_pos += (self.children[i].width) + self.marginRight
+    
     
     def handleEvent(self, event:pygame.event):
         for item in self.children:

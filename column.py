@@ -16,8 +16,8 @@ class Column:
         for i in range(len(self.children)):
             self.children[i].y = y_pos
             self.children[i].x = self.x
-            y_pos += self.children[i-1].height + self.marginBottom 
             self.children[i].draw(surface)
+            y_pos += (self.children[i].height) + self.marginBottom
     
     def handleEvent(self, event:pygame.event):
         for item in self.children:
