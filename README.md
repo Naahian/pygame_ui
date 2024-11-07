@@ -97,4 +97,15 @@ colBtns = Column(
         ]),
     ])
 ```
-
+![image](https://github.com/user-attachments/assets/e3882d5a-9626-4235-a44c-cf2c6630acd9)
+#### Text
+```python
+text = Text(x=0, y=0, text="Some Text")
+styled = Text(0,0,"Styled Text ", size= 28, color=Colors.orange,family="Georgia")
+```
+#### ToggleSwitch
+```python
+toggle1 = ToggleSwitch(x=0,y=0,) 
+toggle2 = ToggleSwitch(x=0,y=0, width=80, color=(95, 216, 18), onActive=func) 
+toggle1State = toggle1.value #boolean
+```
