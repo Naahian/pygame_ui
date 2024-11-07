@@ -101,7 +101,7 @@ colBtns = Column(
 #### Text
 ```python
 text = Text(x=0, y=0, text="Some Text")
-styled = Text(0,0,"Styled Text ", size= 28, color=Colors.orange,family="Georgia")
+styled = Text(0,0,"Styled Text ", size= 28, color=(255, 152, 0),family="Georgia")
 ```
 #### ToggleSwitch
 ```python
