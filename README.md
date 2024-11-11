@@ -30,7 +30,7 @@ while running:
 ...
 ```
 ## Documentaion
-![](https://github.com/user-attachments/assets/f2fd5409-9257-4af6-91b8-06d40f2a493f){: width="50%"}
+![alt |200](https://github.com/user-attachments/assets/f2fd5409-9257-4af6-91b8-06d40f2a493f)
 #### default Button
 ```python
 default = Button(
