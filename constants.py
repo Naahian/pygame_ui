@@ -5,7 +5,7 @@ class Resolution:
 
 class Colors:
     white = (250, 250, 255)
-    grey = (200, 200, 240)
+    grey = (60, 60, 60)
     yellow = (255, 235, 59)
     dark = (20, 25, 35)
     red = (230, 57, 43)

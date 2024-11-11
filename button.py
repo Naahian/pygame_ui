@@ -15,11 +15,11 @@ class Button:
                 centered = False,
                 borderRadius = 10,
                 fontSize = 24,
+                key=None,
             ):
         self.width, self.height = width, height
         self.x, self.y = x, y
-        self.surface = pygame.surface.Surface((width,height))
-        self.surface.set_colorkey((0,0,0))
+        self.surface = pygame.surface.Surface((width,height), pygame.SRCALPHA)
         if(centered): self.rect = pygame.Rect(x - width//2, y - height//2,width, height)
         else: self.rect = pygame.Rect(x,y,width, height)
         self.borderColor = borderColor
@@ -31,6 +31,7 @@ class Button:
         self.onclick = onClick
         self.clicked = False
         self.hovered = False
+        self.key = key
         if(image):
             self.image = pygame.image.load(image).convert()
             self.image = pygame.transform.scale(self.image, (self.width, self.height))
@@ -40,6 +41,7 @@ class Button:
     
     def draw(self, surface:pygame.Surface):
         self.rect.x, self.rect.y = self.x, self.y
+   
         #background
         if(self.image):
             self.rect_image = pygame.Surface((self.width, self.height), pygame.SRCALPHA)
@@ -80,19 +82,21 @@ class Button:
 
     def handleEvent(self, event:pygame.event):
         pos = pygame.mouse.get_pos()
+      
         if self.rect.collidepoint(pos):
             if(not self.hovered):
                 self.hovered = True
                 self.border = 2
                 
             if (event.type == pygame.MOUSEBUTTONDOWN):
+
                 self.clicked = True
                 temp = self.fill
                 self.fill = self.borderColor
                 self.borderColor = temp
                 self.onclick()
     
-            if (event.type == pygame.MOUSEBUTTONUP):
+            if (event.type == pygame.MOUSEBUTTONUP ):
                 self.clicked = False  
                 temp = self.borderColor
                 self.borderColor = self.fill
